@@ -1,0 +1,51 @@
+# ARMv7 Interrupt Vector Table
+# The following format is handled:
+#   b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+3       string                  \xea            ARMv7 Interrupt Vector Table, Little Endian
+>7      byte&0xff               !0xea           
+>>6     uleshort                !0xe59f         {invalid}
+>11     byte&0xff               !0xea
+>>10    uleshort                !0xe59f         {invalid}
+>15     byte&0xff               !0xea
+>>14    uleshort                !0xe59f         {invalid}
+>19     byte&0xff               !0xea
+>>18    uleshort                !0xe59f         {invalid}
+>23     byte&0xff               !0xea
+>>22    uleshort                !0xe59f         {invalid}
+>27     byte&0xff               !0xea
+>>26    uleshort                !0xe59f         {invalid}
+>31     byte&0xff               !0xea
+>>30    uleshort                !0xe59f         {invalid}
+
+# ARMv7 Interrupt Vector Table
+# The following format is handled:
+#   ldr pc, =label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+#   ldr pc, =label | b label
+2       string                  \x9f\xe5          ARMv7 Interrupt Vector Table, Little Endian
+>7      byte&0xff               !0xea           
+>>6     uleshort                !0xe59f         {invalid}
+>11     byte&0xff               !0xea
+>>10    uleshort                !0xe59f         {invalid}
+>15     byte&0xff               !0xea
+>>14    uleshort                !0xe59f         {invalid}
+>19     byte&0xff               !0xea
+>>18    uleshort                !0xe59f         {invalid}
+>23     byte&0xff               !0xea
+>>22    uleshort                !0xe59f         {invalid}
+>27     byte&0xff               !0xea
+>>26    uleshort                !0xe59f         {invalid}
+>31     byte&0xff               !0xea
+>>30    uleshort                !0xe59f         {invalid}

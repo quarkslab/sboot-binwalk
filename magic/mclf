@@ -1,0 +1,12 @@
+# MobiCore Load Format
+# https://github.com/Trustonic/trustonic-tee-user-space/blob/master/common/MobiCore/inc/mcLoadFormat.h
+0       string      MCLF    MobiCore Load Format,
+
+# MCLF_VERSION_MINOR must be < 5
+# MCLF_VERSION_MAJOR must be =2
+>4      uleshort    <5      {invalid}
+>6      uleshort    !2      {invalid}
+
+# Extract version major and minor
+>6      uleshort    x       version %d.
+>4      uleshort    x       \b%d
