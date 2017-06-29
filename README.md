@@ -13,9 +13,22 @@ Find and Extract MobiCore Load Format (MCLF) Files
 --------------------------------------------------
 
 ```bash
-$ mkdir -pv $HOME/.binwalk/{magic,plugins}
-$ cp magic/mclf $HOME/.binwalk/magic/
-$ cp plugins/mclf.py $HOME/.binwalk/plugins/
+$ mkdir -pv $HOME/.config/binwalk/{magic,plugins}
+$ cp magic/mclf $HOME/.config/binwalk/magic/
+$ cp plugins/mclf.py $HOME/.config/binwalk/plugins/
+```
+
+If you are using a version of ``binwalk`` anterior to [this
+commit](https://github.com/devttys0/binwalk/commit/2051757c7b1ada4beb3c04454fd5a218334a35e9),
+create the following symbolic link:
+
+```
+$ ln -sf ls -sf $HOME/.config/binwalk/ $HOME/.binwalk
+```
+
+Then, run ``binwalk`` as usual:
+
+```
 $ binwalk -D 'mobicore mclf' sboot.bin
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
@@ -27,6 +40,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 1478996       0x169154        SHA256 hash constants, little endian
 1486848       0x16B000        MobiCore Load Format, version 2.5
 ```
+
 
 Find ARMv7 Interrupt Vector Table
 ---------------------------------
